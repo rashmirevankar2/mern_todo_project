@@ -1,4 +1,4 @@
-const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:5000';
+const API_BASE = 'https://mern-todo-project-0893.onrender.com';
 export async function api(path, method='GET', token=null, body=null){
   const headers = { 'Content-Type': 'application/json' };
   if(token) headers['Authorization'] = 'Bearer ' + token;
