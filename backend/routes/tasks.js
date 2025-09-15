@@ -47,7 +47,7 @@ router.delete('/:id', auth, async (req, res) => {
     const task = await Task.findById(req.params.id);
     if(!task) return res.status(404).json({ message: 'Task not found' });
     if(task.user.toString() !== req.user.id) return res.status(401).json({ message: 'Not authorized' });
-    await task.remove();
+    await task.deleteOne();
     res.json({ message: 'Task removed' });
   } catch (err) {
     console.error(err);
